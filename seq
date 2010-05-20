@@ -4,6 +4,7 @@ seq - partially compliant Python version of well-known `seq' tool.
 
 Created by Michal Chruszcz <mchruszcz (at) gmail.com>.
 Released under public domain licence.
+Latest version is available at http://github.com/mchruszcz/misc/blob/master/seq
 """
 
 import sys
