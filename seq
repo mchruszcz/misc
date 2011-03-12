@@ -14,7 +14,7 @@ def seq(stop, start=1, step=1, leading_zeroes=False, separator='\n'):
     """Produces formatted sequence according to the parameters."""
     separator = separator.replace(r'%', r'%%')
     if leading_zeroes:
-        width = len(str(stop))
+        width = max(len(str(start)), len(str(stop)))
         chunk = '%%0%dd%s' % (width, separator)
     else:
         chunk = '%%d%s' % separator
