@@ -1,0 +1,22 @@
+#!/bin/bash
+NAME=`basename $0`
+EXT=`echo $NAME | sed s/grep$//`
+
+for arg in "$@"
+do
+    case "$arg" in
+        -i)
+            insensitive="-i"
+            ;;
+        -e)
+            regexp="-e"
+            ;;
+        -E)
+            regexp="-E"
+            ;;
+    esac
+done
+
+query="$arg";
+
+find -L . -path ./venv -prune -o -iname "*.$EXT" -print0 | xargs -0 grep $insensitive $regexp "$query" - | less
